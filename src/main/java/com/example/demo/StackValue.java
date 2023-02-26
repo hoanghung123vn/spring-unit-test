@@ -1,8 +1,7 @@
 package com.example.demo;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.List;
 
@@ -10,6 +9,9 @@ import java.util.List;
 @Table(name = "stack_values")
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class StackValue {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

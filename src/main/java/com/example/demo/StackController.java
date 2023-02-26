@@ -19,6 +19,11 @@ public class StackController {
         return stacks.stream().map(mapper::entityToResponse).toList();
     }
 
+    @GetMapping("count")
+    public long countAll() {
+        return repository.count();
+    }
+
     @GetMapping("{id}")
     public StackResponse getById(@PathVariable(name = "id") int id) {
         var stack = repository.findById(id).orElseThrow(EntityNotFoundException::new);
